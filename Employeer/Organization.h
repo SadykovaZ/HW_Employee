@@ -2,7 +2,11 @@
 #include<list>
 #include"Employee.h"
 #include<memory>
-
+#include"Acounter.h"
+#include"Director.h"
+#include"HRManager.h"
+#include"Janitor.h"
+#include"Proger.h"
 
 Employee*getEmployee();
 class Organization
@@ -12,7 +16,7 @@ class Organization
 public:
 	Organization();
 	void addEmployee();
-	//void countSalary();
+	//void countSalary() const;
 	void printScreen() const;	
 };
 

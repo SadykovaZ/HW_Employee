@@ -8,9 +8,9 @@ void Organization::addEmployee()
 	this->empl.push_back(unique_ptr<Employee>(getEmployee()));	
 }
 
-//void Organization::countSalary()
+//void Organization::countSalary() const
 //{
-//	
+//	Employee::getSalary();
 //}
 
 void Organization::printScreen() const
