@@ -2,6 +2,7 @@
 OrganizationConsole::OrganizationConsole() : organization("Almaty", 100000)
 {
 	cout << "\n-----Welcome to Almaty organization-----" << endl;
+
 }
 
 void OrganizationConsole::start()
@@ -11,7 +12,6 @@ void OrganizationConsole::start()
 	int ch2 = 0;
 	while (ch != 4)
 	{
-
 		cout << endl;
 		printMenu();
 		cout << endl;
@@ -29,6 +29,7 @@ void OrganizationConsole::start()
 				switch (ch1)
 				{
 				case 1:
+					
 					organization.addEmployee(new Acounter("Pete", 30, "Male", 15, 1));
 					goto again;
 					break;
@@ -63,6 +64,7 @@ void OrganizationConsole::start()
 				switch (ch2)
 				{
 				case 1:
+					
 					organization.delEmployee((Acounter*)("Pete", 30, "Male", 15, 1));
 					goto again1;
 					break;
