@@ -11,6 +11,7 @@ public:
 
 	void info()const override;
 	double getSalary()const override;
+
 	
 };
 
