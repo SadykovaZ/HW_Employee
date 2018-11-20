@@ -1,22 +1,18 @@
 #pragma once
-#include<list>
-#include"Employee.h"
-#include<memory>
-#include"Acounter.h"
-#include"Director.h"
-#include"HRManager.h"
-#include"Janitor.h"
-#include"Proger.h"
-
-Employee*getEmployee();
+#include "Employee.h"
+#include <vector>
+using namespace std;
 class Organization
 {
-	list<unique_ptr<Employee>> empl;
-
+	string name;
+	vector<unique_ptr<Employee>>employees;
+	int baseSalary;
 public:
-	Organization();
-	void addEmployee();
-	//void countSalary() const;
-	void printScreen() const;	
+	Organization(string name, int baseSalary);
+	void addEmployee(Employee* employee);
+	void delEmployee(Employee* employee);
+	void getInfo()const;	
+	double getSalaryFund()const;
+
 };
 

@@ -15,17 +15,15 @@ void Proger::setHasEdu(bool hasEdu)
 {
 	this->hasEdu = hasEdu;
 }
-
 void Proger::info() const
 {
 	Employee::info();
-	cout << "count of languages: " << cntLang << "\nhas education: " << boolalpha << hasEdu << endl;
+	cout << "Count of languages: " << cntLang << "\nHas education: " << boolalpha << hasEdu << endl;
 }
-
 double Proger::getSalary() const
 {
 	double coef = cntLang * 0.1;
 	coef += getWorkYears()*0.1;
-	coef += hasEdu*0.02;
+	coef += hasEdu * 0.02;
 	return coef;
 }

@@ -11,7 +11,7 @@ void Janitor::setConditions(bool harmConditions)
 void Janitor::info() const
 {
 	Employee::info();
-	cout << "\nJanitor works in harmful conditions?: " << harmConditions << endl;
+	cout << "Janitor works in harmful conditions?: " << boolalpha << harmConditions << endl;
 }
 double Janitor::getSalary() const
 {

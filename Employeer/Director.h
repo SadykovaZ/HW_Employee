@@ -4,9 +4,7 @@ class Director :
 	public Employee
 {
 public:
-	Director(string name, int age, string sex, int workYears);
-	
-	
+	Director(string name, int age, string sex, int workYears);	
 	double getSalary()const override;
 };
 

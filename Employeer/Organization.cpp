@@ -1,28 +1,41 @@
 #include "Organization.h"
-Organization::Organization()
+
+Organization::Organization(string name, int baseSalary)
 {
+	this->name = name;
+	this->baseSalary = baseSalary;
 }
 
-void Organization::addEmployee()
+void Organization::addEmployee(Employee * employee)
 {
-	this->empl.push_back(unique_ptr<Employee>(getEmployee()));	
+	employees.push_back(unique_ptr<Employee>(employee));
 }
 
-//void Organization::countSalary() const
-//{
-//	Employee::getSalary();
-//}
-
-void Organization::printScreen() const
+void Organization::delEmployee(Employee * employee)
 {
-	
-	cout << "Employee : \n";
-	
-	for (auto&i : empl)
+	for (size_t i = 0; i < employees.size(); i++)
 	{
-		string tp = typeid(*i).name();
-		tp = tp.substr(6) + " ";
-		cout << tp;
-		i->info();
+		if (employees[i].get() == employee) {
+			employees.erase(begin(employees) + i);
+			return;
+		}
 	}
+}
+void Organization::getInfo() const
+{
+	for (size_t i = 0; i < employees.size(); i++)
+	{
+		employees[i]->info();
+		cout << "Salary: " << employees[i]->getSalary()*baseSalary << endl;
+		cout << "------------------------------\n";
+	}	
+}
+double Organization::getSalaryFund() const
+{
+	double res = 0;
+	for (size_t i = 0; i < employees.size(); i++)
+	{
+		res += employees[i]->getSalary()*baseSalary;
+	}
+	return res;
 }
