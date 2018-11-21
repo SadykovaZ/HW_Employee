@@ -1,13 +1,18 @@
 #pragma once
 #include "Human.h"
-class Employee :
+class Employee abstract :
 	public Human
 {	
+	static int idSeq;
 	int workYears;
+	int id;
 public:
 	Employee(string name, int age, string sex, int workYears);
 	void setWorkYears(int workYears);
+	
 	int getWorkYears()const { return workYears; }
+	int getID() const { return id; }
+
 	void info()const override;
 	virtual double getSalary()const=0;
 };
